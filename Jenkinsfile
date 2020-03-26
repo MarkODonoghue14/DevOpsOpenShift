@@ -22,11 +22,5 @@ pipeline {
             steps {
                     sh 'mvn verify sonar:sonar'
             }
-            
-            stage('Build Stage'){
-            steps{
-                    sh 'mvn package'  
-        }
-    }
-}
+  }
 }
