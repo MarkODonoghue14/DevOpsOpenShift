@@ -40,14 +40,13 @@ pipeline {
                     }               
              }
           }
-          
       post {
            failure {
-               emailext body: 'The Jenkins build was unsuccessful', subject: 'Jenkins Build Failure', to: 'markodonoghue230@gmail.com'
+               emailext body: 'The jenkins build failed', subject: 'Jenkins Build Failed', to: 'markodonoghue230@gmail.com'
            }
            
            success {
-           emailext body: 'The jenkins build was successful' , subject: 'Jenkins Build successful', to: 'markodonoghue230@gmail.com'
+           emailext body: 'The jenkins build succeded', subject: 'Jenkins Build Success', to: 'markodonoghue230@gmail.com'
          }
       }
      }
