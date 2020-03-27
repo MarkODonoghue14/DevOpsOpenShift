@@ -50,5 +50,6 @@ pipeline {
            emailext body: 'The jenkins build was successful' , subject: 'Jenkins Build successful', to: 'markodonoghue230@gmail.com'
          }
       }
+     }
       
    
