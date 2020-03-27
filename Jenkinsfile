@@ -22,6 +22,7 @@ pipeline {
             steps {
                     sh 'mvn verify sonar:sonar'
             }
+          }
             
             stage ('Build Stage') {
             
