@@ -36,13 +36,14 @@ pipeline {
                 sh 'mvn clean package sonar:sonar'
               }
             }
+           }
                stage("Quality Gate Stage") {
             steps {
               timeout(time: 1, unit: 'HOURS') {
                 waitForQualityGate abortPipeline: true
               }
             }
-
+           }
           }
       }
       
