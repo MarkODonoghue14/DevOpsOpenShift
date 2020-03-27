@@ -22,5 +22,5 @@ pipeline {
             steps {
                     sh 'mvn verify sonar:sonar'
             }
-  }
-}
+      }
+      }
