@@ -17,10 +17,17 @@ pipeline {
                     sh 'mvn test'
             }
         }
-                stage ('SonarCloud Analysis') {
+                stage ('SonarCloud Analysis Stage') {
            
             steps {
                     sh 'mvn verify sonar:sonar'
             }
-      }
+            
+            stage ('Build Stage') {
+            
+            steps {
+                    sh 'mvn package'
+                    }               
+             }
+          }
       }
