@@ -1,7 +1,9 @@
 pipeline {
-    agent docker {
+    agent 
+    {docker {
         image 'maven:3-alpine'
         args '-u root'
+    }
     }
     tools {
         maven 'MVN'
