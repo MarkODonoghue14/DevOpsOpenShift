@@ -17,10 +17,10 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-  <sonar.projectKey>MarkODonoghue14_DevOps</sonar.projectKey>
-  <sonar.organization>markodonoghue14</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-  <sonar.login>f0f9de109e9af7ef06c2446097523ba43614b155</sonar.login>
+  <sonar.projectKey>markodonoghue14</sonar.projectKey>
+<!--   <sonar.organization>MarkODonoghue14_DevOps</sonar.organization> -->
+  <sonar.host.url>http://sonar-ci-cd.apps.openshiftaws.openshiftaws.co.uk</sonar.host.url>
+  <sonar.login>1aa4e2a6455e5c1f737c6f48b4628834d263b177</sonar.login>
 </properties>
 
 	<dependencies>
