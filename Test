@@ -15,3 +15,13 @@ Testingemailsv5
               }
             }
            }
+           
+                 post {
+           failure {
+               emailext body: 'The jenkins build failed', subject: 'Jenkins Build Failed', to: 'markodonoghue230@gmail.com'
+           }
+           
+           success {
+           emailext body: 'The jenkins build succeded', subject: 'Jenkins Build Success', to: 'markodonoghue230@gmail.com'
+         }
+      }
