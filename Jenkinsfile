@@ -42,7 +42,7 @@ pipeline {
         stage ('Docker Build'){
         agent any
         steps {
-        sh ' docker build - t mark/book:latest .'
+        sh ' docker build -t mark/book:latest .'
         }
         }
           }
