@@ -15,7 +15,14 @@ Testingemailsv5
               }
             }
            }
-           test
+           
+                stage("Quality Gate Stage") {
+            steps {
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+           }
            
                  post {
            failure {
