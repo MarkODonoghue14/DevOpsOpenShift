@@ -40,9 +40,9 @@ pipeline {
         }
         
         stage ('Docker Build'){
-        agent any
+        def myImg
         steps {
-        sh ' docker build -t mark/book:latest .'
+        myImg = docker.build 'my-image:snapshot'
         }
         }
           }
