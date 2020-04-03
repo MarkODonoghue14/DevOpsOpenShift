@@ -1,5 +1,5 @@
 TestingwebHookv7
-Testingemailsv5
+Testingemailsv7
 
           stage("build & SonarQube analysis Stage") {
             steps {
