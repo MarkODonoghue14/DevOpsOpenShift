@@ -41,7 +41,9 @@ pipeline {
         
         stage ('Docker Build'){
         steps {
+        script{
             docker.build 'my-image:snapshot'
+        }
         }
         }
           }
