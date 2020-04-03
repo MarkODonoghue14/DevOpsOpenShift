@@ -47,7 +47,7 @@ pipeline {
         }
           }
           
-                   post {
+          post {
            failure {
                emailext body: 'The jenkins build was a failure', replyTo: 'markodonoghue230@gmail.com', subject: 'Build failed', to: 'markodonoghue230@gmail.com'
            }
