@@ -40,9 +40,8 @@ pipeline {
         }
         
         stage ('Docker Build'){
-        def myImg
         steps {
-        myImg = docker.build 'my-image:snapshot'
+            docker.build 'my-image:snapshot'
         }
         }
           }
