@@ -24,8 +24,7 @@ pipeline {
               }
             }
            }
-           
-            
+                 
             stage ('Build Stage') {
             
             steps {
@@ -33,19 +32,6 @@ pipeline {
                     }               
              }
              
-                stage ('Push to Nexus') {
-            steps {
-            sh 'mvn deploy'
-            }
-        }
-        
-        stage ('Docker Build'){
-        steps {
-        script{
-            docker.build 'my-image:snapshot'
-        }
-        }
-        }
           }
           
           post {
