@@ -24,7 +24,7 @@ Testingemailsv7
             }
            }
            
-                          stage ('Push to Nexus') {
+                          stage ('Push to Nexus Stage') {
             steps {
             sh 'mvn deploy'
             }
