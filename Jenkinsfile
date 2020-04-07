@@ -1,4 +1,10 @@
 pipeline {
+
+  environment {
+    registry = "markslaw/devops"
+    registryCredential = "dockerhubcreds"
+    image = ''
+  }     
     agent any
     tools {
         maven 'MVN'
@@ -32,13 +38,26 @@ pipeline {
                     }               
              }
              
-                                      stage ('Push to Nexus Stage') {
-            steps {
-            sh 'mvn deploy'
-            }
-        }
-             
+                
           }
+          
+          		stage ('Build Docker Image Stage') {
+		 steps {
+		    script {
+		    image = docker.build registry + ":$BUILD_NUMBER"
+		    }
+		   }
+		  } 
+		  
+		  stage ('Push Image to DockerHub Registery Stage') {
+		   steps {
+		    script {
+		    docker.withRegistry('https://index.docker.io/v1/','registryCredential') {
+		    image.push()
+		    }
+		    }
+		    }
+		    }
           
           post {
            failure {
