@@ -50,7 +50,7 @@ pipeline {
 		  stage ('Push Image to DockerHub Registery Stage') {
 		   steps {
 		    script {
-		    docker.withRegistry('https://index.docker.io/v1/','registryCredential') {
+		    docker.withRegistry('https://index.docker.io/v1/','dockerhubcreds') {
 		    image.push()
 		    }
 		    }
