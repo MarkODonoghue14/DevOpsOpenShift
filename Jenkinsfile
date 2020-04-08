@@ -10,52 +10,15 @@ pipeline {
         maven 'MVN'
     }
     stages {
-        stage ('Compile Stage') {
-           
+          stage('Ansible Stage'){
             steps {
-                    sh 'mvn clean compile'
+                dir('deployment'){
+                    echo 'Deploying application'
+                    sh '/usr/local/bin/ansible-playbook -i dev-servers site.yml'
+                }
             }
         }
-       
-        stage ('Testing Stage') {
-           
-            steps {
-                    sh 'mvn test'
-            }
-        }
-                  stage("build & SonarQube analysis Stage") {
-            steps {
-              withSonarQubeEnv('Sonar') {
-                sh 'mvn clean package sonar:sonar'
-              }
-            }
-           }
-                 
-            stage ('Build Stage') {
-            
-            steps {
-                    sh 'mvn package'
-                    }               
-             }
-             
-          
-          		stage ('Build Docker Image Stage') {
-		 steps {
-		    script {
-		    image = docker.build registry + ":$BUILD_NUMBER"
-		    }
-		   }
-		  } 
-		  
-		  stage ('Push Image to DockerHub Registery Stage') {
-		   steps {
-		    script {
-		    docker.withRegistry('https://index.docker.io/v1/','dockerhubcreds') {
-		    image.push()
-		    }
-		    }
-		    }
-		    }
+
 		    }
           
           post {
