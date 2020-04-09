@@ -1,0 +1,4 @@
+hosts: cloud
+  remote_user: ec2-user@34.247.189.32
+  roles:
+     - common
