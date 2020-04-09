@@ -1,4 +1,4 @@
 hosts: aws
-  remote_user: ec2-user@34.247.189.32
+  remote_user: ec2-user
   roles:
      - common
