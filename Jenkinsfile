@@ -14,7 +14,7 @@ pipeline {
             steps {
                 dir('deployment'){
                     echo 'Deploying application'
-                    sh '/usr/local/bin/ansible-playbook -i 34.247.189.32 dev-servers site.yml'
+                    sh '/usr/local/bin/ansible-playbook -i 34.247.189.32 site.yml'
                 }
             }
         }
