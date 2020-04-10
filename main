@@ -1,0 +1,73 @@
+---
+
+ 
+
+ 
+
+- name: Network Getting Started First Playbook
+  gather_facts: false
+  hosts: web-servers
+  become: yes
+  become_user: root
+  tasks:
+    - name: Removing prvious version of Docker
+      yum:
+        name:
+          - docker
+          - docker-client
+          - docker-client-latest
+          - docker-common
+          - docker-latest
+          - docker-latest-logrotate
+          - docker-logrotate
+          - docker-engine
+        state: removed
+
+
+    - name: Updateing the host machine
+      command: yum update -y
+
+    - name: installing cdurl
+      command: yum install curl -y
+
+    - name: Installing latest docker version
+      command: yum install docker -y
+
+    - name: Adding user to docker group
+      command: usermod -aG docker ${USER}
+
+    - name: Restarting docker service
+      command: service docker restart
+
+    - name: Purging docker system(cleaning containers,images and volumes)
+      command: docker system prune -a -f
+
+    - name: Changing Permissions(Changing permisions on docker.sock to allow docker to run)
+      command: chmod 777 /var/run/docker.sock
+
+    - name: Updating the host machine
+      command: yum update -y
+
+    - name: Installing Python Pip
+      command: yum install python-pip python-dev build-essential -y
+
+    - name: Installing Docker compose
+      command: pip install docker-compose==1.3.0
+      
+    - name: Docker pull couchdb image
+      command: docker pull markslaw/couchdb:latest
+
+    - name: Docker pull book java api image
+      command: docker pull markslaw/devops:{{ JENKINS_BUILD_NUMBER }}
+ 
+    - name: Docker pull book react frontend
+      command: docker pull markslaw/reactbookappfrontend:latest 
+
+    - name: Host book couchdb docker image
+      command: docker run -d -p 5984:5984  --name couchdb markslaw/couchdb
+
+    - name: Host book java api docker image
+      command: docker run -d -p 8085:8085  --name bookappjava markslaw/devops
+      
+    - name: Host book React frontend docker image 
+      command: docker run -d -p 3000:3000 --name bookappreact markslaw/reactbookappfrontend 
