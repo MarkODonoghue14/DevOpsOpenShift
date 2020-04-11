@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://63.32.112.18:3000")
+@CrossOrigin(origins = "http://34.253.205.1:3000")
 public class BookContoller {
 
 	@Autowired
