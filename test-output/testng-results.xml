@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="13048" started-at="2020-04-11T21:03:49 IST" finished-at="2020-04-11T21:04:02 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="13048" started-at="2020-04-11T21:03:49 IST" finished-at="2020-04-11T21:04:02 IST">
+      <class name="SeliuniumTests.SeliniumTestsFrontEnd">
+        <test-method status="PASS" signature="testCreateBook()[pri:0, instance:SeliuniumTests.SeliniumTestsFrontEnd@44c8afef]" name="testCreateBook" duration-ms="12983" started-at="2020-04-11T21:03:49 IST" finished-at="2020-04-11T21:04:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateBook -->
+      </class> <!-- SeliuniumTests.SeliniumTestsFrontEnd -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
