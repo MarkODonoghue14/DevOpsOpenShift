@@ -92,7 +92,7 @@ Testingemailsv7
 		    script {
 		    docker.withRegistry('https://index.docker.io/v1/','dockerhubcreds') {
 		    image.push()
-		    }test1
+		    }test3
 		    }
 		    }
 		    }
