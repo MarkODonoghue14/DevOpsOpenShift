@@ -85,6 +85,10 @@ pipeline {
            success {
              emailext body: 'The jenkins build was a success', replyTo: 'markodonoghue230@gmail.com', subject: 'Jenkins Build', to: 'markodonoghue230@gmail.com'
          }
+         
+         always{
+         slackSend channel: 'build', message: '${currentBuild.currentResult}', token: '6uez3MxXOBc2QXNgOIXAV0vv'
+         }
       }
           
           
