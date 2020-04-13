@@ -54,6 +54,9 @@ pipeline {
 		    docker.withRegistry('https://index.docker.io/v1/','dockerhubcreds') {
 		    image.push()
 		    }
+		    }
+		    }
+		    }
          
          
          
