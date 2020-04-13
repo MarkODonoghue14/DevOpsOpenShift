@@ -40,6 +40,13 @@ pipeline {
             }
            }
            
+           
+        stage ('Push to Nexus Stage') {
+            steps {
+            sh 'mvn deploy'
+            }
+        }
+           
          stage ('Build Docker Image Stage') {
 		 steps {
 		    script {

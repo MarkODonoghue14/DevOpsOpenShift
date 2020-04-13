@@ -138,19 +138,18 @@
 </dependency>
   
 	</dependencies>
-	<!-- <distributionManagement>
+	<distributionManagement>
     <repository>
       <id>nexus</id>
       <name>Releases</name>
-      <url>http://34.244.234.105:8081/repository/maven-releases/</url>
+      <url>http://52.49.44.76:8081/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
       <id>nexus</id>
       <name>Snapshot</name>
-      <url>http://34.244.234.105:8081/repository/maven-snapshots/</url>
+      <url>http://52.49.44.76:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
--->
 	<build>
 		<plugins>		
 		           <plugin>
