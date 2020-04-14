@@ -1,6 +1,9 @@
 ---
 
 
+
+
+
 - name: Book Application Playbook
   gather_facts: false
   hosts: web-servers
@@ -24,27 +27,6 @@
     - name: Updateing the host machine
       command: yum update -y
 
-    - name: installing cdurl
-      command: yum install curl -y
-
-    - name: Installing latest docker version
-      command: yum install docker -y
-
-    - name: Adding user to docker group
-      command: usermod -aG docker ${USER}
-
-    - name: Restarting docker service
-      command: service docker restart
-
-    - name: Purging docker system(cleaning containers,images and volumes)
-      command: docker system prune -a -f
-
-    - name: Changing Permissions(Changing permisions on docker.sock to allow docker to run)
-      command: chmod 777 /var/run/docker.sock
-
-    - name: Updating the host machine
-      command: yum update -y
-
     - name: installing curl
       command: yum install curl -y
 
@@ -60,7 +42,7 @@
     - name: Purging docker system(cleaning containers,images and volumes)
       command: docker system prune -a -f
 
-    - name: Changing Permissions(Changing permisions on docker.sock to allow docker to run)
+    - name: Changing Permissions(Changing permisions on docker.sock to allow doc                                                                                                             ker to run)
       command: chmod 777 /var/run/docker.sock
 
     - name: Updating the host machine
@@ -89,22 +71,22 @@
 
     - name: Host book React frontend docker image
       command: docker run -d -p 3000:3000 --name bookappreact markslaw/reactbookappfrontend
-   
-   
+
     - name: Start prometheus task
       command: chdir=/home/ec2-user/prometheus-2.17.1.linux-amd64 ./prometheus
       ignore_errors: yes
-      async: 7200
+      async: 8000
       poll: 0
-      
+
     - name: Start node exporter task
       command: chdir=/home/ec2-user/node_exporter-0.18.1.linux-amd64 ./node_exporter
       ignore_errors: yes
-      async: 7200
+      async: 8000
       poll: 0
- 
+
     - name: Start Grafana task
       command: chdir=/home/ec2-user/grafana-6.7.2 ./bin/grafana-server
       ignore_errors: yes
-      async: 7200
+      async: 8000
       poll: 0
+
