@@ -78,6 +78,13 @@ pipeline {
 		    }
           
           post {
+          failure{
+          emailext attachLog: true, body: 'The jenkins build was a failure', replyTo: 'markodonoghue230@gmail.com', subject: 'Jenkins Build', to: 'markodonoghue230@gmail.com'
+          }
+          
+          success{
+          emailext attachLog: true, body: 'The jenkins build was a success', replyTo: 'markodonoghue230@gmail.com', subject: 'Jenkins Build', to: 'markodonoghue230@gmail.com'
+          }
          always{
         emailext attachLog: true, body: "${currentBuild.currentResult}", replyTo: 'markodonoghue230@gmail.com', subject: 'Jenkins Build', to: 'markodonoghue230@gmail.com'
          slackSend channel: 'build', message: "${currentBuild.currentResult}", token: '6uez3MxXOBc2QXNgOIXAV0vv'
