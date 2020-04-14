@@ -79,7 +79,7 @@ pipeline {
           
           post {
          always{
-         emailext attachLog: true, body: "${currentBuild.currentResult}", replyTo: 'markodonoghue230@gmail.com', subject: "${currentBuild.currentResult}", to: 'markodnoghue230@gmail.com'
+         emailext attachLog: true, body: "${currentBuild.currentResult}", replyTo: 'markodonoghue230@gmail.com', subject: "${currentBuild.currentResult}", to: 'markodonoghue230@gmail.com'
          slackSend channel: 'build', message: "${currentBuild.currentResult}", token: '6uez3MxXOBc2QXNgOIXAV0vv'
          }
       }
