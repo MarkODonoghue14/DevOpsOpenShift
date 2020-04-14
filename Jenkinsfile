@@ -79,12 +79,13 @@ pipeline {
           
           post {
           
-          success{
-          mail bcc: '', body: 'Jenkins build was successful', cc: '', from: 'markodonoghue230@gmail.com', replyTo: 'markodonoghue230@gmail.com', subject: 'Jenkins Build', to: 'markodonoghue230@gmail.com'
-          }
-          failure{
-          mail bcc: '', body: 'Jenkins Build was a failure', cc: '', from: 'markodonoghue230@gmail.com', replyTo: 'markodonoghue230@gmail.com', subject: 'Jenkins Build', to: 'markodonoghue230@gmail.com'
-          }
+       failure {
+               emailext body: 'The Jenkins build failed', subject: 'Jenkins Build Failed', to: 'markodonoghue230@gmail.com'
+           }
+           
+           success {
+           emailext body: 'The Jenkins build succeded', subject: 'Jenkins Build Success', to: 'markodonoghue230@gmail.com'
+         }
          always{
          slackSend channel: 'build', message: "${currentBuild.currentResult}", token: '6uez3MxXOBc2QXNgOIXAV0vv'
          }
