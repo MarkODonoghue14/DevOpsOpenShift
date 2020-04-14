@@ -41,7 +41,7 @@ pipeline {
            }
            
            
-        stage ('Push to Nexus Stage') {
+        stage ('Push to Nexus Stage (Deploy)') {
             steps {
             sh 'mvn deploy'
             }
