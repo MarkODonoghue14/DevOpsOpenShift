@@ -53,6 +53,7 @@ public class BookContoller {
 		allBooks = bookDao.getAll();
 		ArrayList reviews = new ArrayList<>();
 		Book book = new Book("Andrew and Murts Test Book", "Test", "Horror","Mark O D",reviews);
+		allBooks.add(book);
 		return allBooks;
 	}
 	
