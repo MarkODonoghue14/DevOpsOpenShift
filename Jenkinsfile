@@ -74,6 +74,12 @@ pipeline {
             }
         }
         
+        stage('Jenkins Server clean up Stage'){
+         steps {
+           sh ' docker system prune -a -f '
+         }
+        }
+        
 
 		    }
           
