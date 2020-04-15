@@ -51,9 +51,9 @@ public class BookContoller {
 	public List<Book> getBooks() {
 		List<Book> allBooks = new ArrayList<>();
 		allBooks = bookDao.getAll();
-//		ArrayList reviews = new ArrayList<>();
-//		Book book = new Book("Andrew and Murts Test Book", "Test", "Horror","Mark O D",reviews);
-//		allBooks.add(book);
+		ArrayList reviews = new ArrayList<>();
+		Book book = new Book("Andrew and Murts Test Book", "Test", "Horror","Mark O D",reviews);
+		allBooks.add(book);
 		return allBooks;
 	}
 	
