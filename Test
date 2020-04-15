@@ -47,7 +47,7 @@ Testingemailsv7
            emailext body: 'The jenkins build succeded', subject: 'Jenkins Build Success', to: 'markodonoghue230@gmail.com'
          }
       }
-      
+      t
       
       --------------------------------------------------------
               stage ('Compile Stage') {
