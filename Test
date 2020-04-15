@@ -37,7 +37,7 @@ Testingemailsv7
         }
         }
         }
-           t
+           tt
                  post {
            failure {
                emailext body: 'The jenkins build failed', subject: 'Jenkins Build Failed', to: 'markodonoghue230@gmail.com'

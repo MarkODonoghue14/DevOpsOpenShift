@@ -115,16 +115,16 @@ public class BookContoller {
 		
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, produces="application/json", value="/HelloWorld")
-	@ResponseBody
-	public String getHelloWorld() {
-		try {
-		return "HelloWorld";
-	}
-		catch (Exception e) {		
-		}
-		return null;
-	}	
+//	@RequestMapping(method = RequestMethod.GET, produces="application/json", value="/HelloWorld")
+//	@ResponseBody
+//	public String getHelloWorld() {
+//		try {
+//		return "HelloWorld";
+//	}
+//		catch (Exception e) {		
+//		}
+//		return null;
+//	}	
 	
 
 }
