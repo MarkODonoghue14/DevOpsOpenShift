@@ -93,6 +93,7 @@ pipeline {
           }
          always{
          slackSend channel: 'build', message: "${currentBuild.currentResult}", token: '6uez3MxXOBc2QXNgOIXAV0vv'
+          cleanWs()
          }
       }
           
